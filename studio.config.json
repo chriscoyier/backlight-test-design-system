@@ -1,28 +1,29 @@
 {
-  "packages": {
-    "dir": "",
-    "menu": [
-      [
-        "TOKENS",
-        [
-          "colors",
-          "elevation",
-          "radius",
-          "theme"
-        ]
-      ],
-      [
-        "COMPONENTS",
-        [
-          "button"
-        ]
-      ],
-      [
-        "INFRASTRUCTURE",
-        [
-          "doc-layout"
-        ]
-      ]
+ "packages": {
+  "dir": "",
+  "menu": [
+   [
+    "TOKENS",
+    [
+     "colors",
+     "elevation",
+     "radius",
+     "theme"
     ]
-  }
+   ],
+   [
+    "COMPONENTS",
+    [
+     "button",
+     "buttonGroup"
+    ]
+   ],
+   [
+    "INFRASTRUCTURE",
+    [
+     "doc-layout"
+    ]
+   ]
+  ]
+ }
 }

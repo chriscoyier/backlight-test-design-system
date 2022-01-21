@@ -1,0 +1,20 @@
+{% macro buttonGroup(label, icon = '', classes = '', attrs = '') %}
+  <span class="btn-group">
+  <button
+    class="btn {{ classes }}"
+    {{ attrs }}
+  >
+    <i class="icon">{{ icon | safe }}</i>
+    {{ label }}
+  </button>
+
+  <button
+    class="btn {{ classes }}"
+    {{ attrs }}
+  >
+    <i class="icon">{{ icon | safe }}</i>
+    {{ label }}
+  </button>
+  </span>
+{% endmacro %}
+
