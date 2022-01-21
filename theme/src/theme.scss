@@ -1,0 +1,19 @@
+@use '../../colors/src/colors';
+@use '../../elevation/src/elevation';
+@use '../../radius/src/radius';
+
+:where(html) {
+  @extend %colors;
+  @extend %elevation;
+  @extend %radius;
+}
+
+html {
+  --nj-color-base-light: var(--color-slate);
+  --nj-color-base-dark: var(--color-grey);
+  --nj-color-primary-light: var(--color-green);
+  --nj-color-primary-100-light: var(--color-green-100);
+}
+
+@import './light';
+@import './dark';

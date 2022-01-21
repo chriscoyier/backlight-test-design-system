@@ -1,0 +1,125 @@
+{% extends "../../doc-layout/src/base.njk" %}
+
+{% block default %}
+
+<h1>Nunjucks Starter Kit
+</h1>
+
+<p>This is a simple <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a>-based Design System sample.
+</p>
+
+<h2>Tutorial: Use it as a Design System for your project</h2>
+
+<p>In this quick and guided tutorial, you'll use this Design System in your local Eleventy project.
+</p>
+
+<h3>Pre-requisites (in your local environment)
+</h3>
+
+<ol>
+<li>Create a new Eleventy app
+<pre><code>$ mkdir my-11ty-app
+$ cd my-11ty-app
+$ npm init -y</code></pre>
+</li>
+<li>Add the dependencies we'll need to run the project, like 11ty, and Sass for styling:
+<pre><code>$ npm install @11ty/eleventy sass npm-run-all --save-dev</code></pre>
+</li>
+<li>Add npm scripts to run your development tasks in your <code>package.json</code> file:
+<pre><code>"scripts": {
+  "watch:11ty": "eleventy --serve",
+  "watch:sass": "sass --no-source-map --watch sass:_site/css",
+  "watch": "npm-run-all build:sass --parallel watch:*",
+  "build:sass": "sass --no-source-map sass:_site/css",
+  "start": "npm-run-all watch"
+}</code></pre>
+</li>
+</ol>
+
+<h3>In Backlight
+</h3>
+
+<p>Get the command to link your Design System in your local project.
+To so, click the top-right button next to your avatar. You get a modal named Link, showing a <code>npx backlight link ...</code> command.
+Copy it.
+</p>
+
+<h3>In your local project
+</h3>
+
+<ol>
+<li>Paste and execute the previously copied command. Validate default choices.
+</li>
+<li>Edit the <code>package.json</code> Sass script to set import paths to the Design System root:
+<pre><code>"watch:sass": "sass --load-path=node_modules/@backlight-dev/[workspace].[project] --no-source-map --watch sass:_site/css",
+"build:sass": "sass --load-path=node_modules/@backlight-dev/[workspace].[project] --no-source-map sass:_site/css",</code></pre>
+</li>
+<li>Add an <code>.eleventy.js</code> config file at the root level of your folder to set the Design System root in the Nunjucks' loading paths:
+<pre><code>let Nunjucks = require("nunjucks");
+
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addWatchTarget("./src/sass/");
+
+  let nunjucksEnvironment = new Nunjucks.Environment(
+    new Nunjucks.FileSystemLoader([
+      "node_modules/@backlight-dev/divriots.starter-nunjucks/",
+    ])
+  );
+  eleventyConfig.setLibrary("njk", nunjucksEnvironment);
+};</code></pre>
+</li>
+<li>Create your default 3 files:
+<ul>
+<li><code>README.md</code> containing a simple page:
+{% raw %}
+<pre><code>---
+layout: default.njk
+title: My Page Using Design Systems Components
+---
+
+# {{ title }}</code></pre>
+{% endraw %}
+</li>
+<li><code>sass/main.scss</code> importing the DS theme and the components styles:
+<pre><code>@import "theme/src/theme.scss";
+@import "button/src/_button.scss";
+</code></pre>
+</li>
+<li><code>_includes/default.njk</code> containing the base layout and importing the <code>Button</code> component from the Design System:
+<pre><code id="default_njk_file"></code></pre>
+</li>
+</ul>
+</li>
+<li>Run the <code>npm start</code> command to run the development environment, and point your browser to <a href="http://localhost:8080/README">http://localhost:8080/README</a>.
+</li> 
+</ol>
+
+<p>ℹ️ Keep in mind to replace <code>[workspace]</code> and <code>[project]</code> by the name of yours. Have a look at the <code>node_modules/@backlight-dev</code> folder.
+</p>
+
+<p>Have a look at your browser: your page was updated and you should see the Design System's <code>Button</code> component welcoming you, using the internal Design Tokens and Theme.
+</p>
+
+{# HTML template injected using JS due to parse error in Nunjucks #}
+{# Maybe is worth it to add syntax highlighting this way? #}
+{% raw %}
+<script>
+document.querySelector('#default_njk_file').innerHTML=`{% import "button/src/button.njk" as Button %}
+
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0">
+    &lt;link rel="stylesheet" href="/css/main.css">
+    &lt;title>{{ title }}&lt;/title>
+  &lt;/head>
+  &lt;body>
+    {{ Button.btn("Hello Rioters 🤘 !") }}
+    {{ content | safe }} 
+  &lt;/body>
+&lt;/html>`;
+</script>
+{% endraw %}
+
+{% endblock %}

@@ -1,0 +1,34 @@
+.doc {
+  background-color: var(--nj-color-surface);
+  color: var(--nj-color-text);
+}
+
+.doc h1,
+.doc h2,
+.doc h3,
+.doc h4,
+.doc h5,
+.doc h6,
+.doc p,
+.doc ul,
+.doc ol {
+  color: inherit;
+}
+
+.logo {
+  width: 4em;
+}
+
+.box {
+  width: 6rem;
+  height: 6rem;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-2);
+}
+.box.dark {
+  background-color: var(--color-green);
+}
+.box.large {
+  width: 12rem;
+  height: 12rem;
+}

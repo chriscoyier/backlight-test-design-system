@@ -1,0 +1,23 @@
+{% extends "../../doc-layout/src/base.njk" %}
+
+{% block default %}
+
+<h1>Colors</h1>
+
+<h2>Background Colors</h2>
+
+<dockit-css-showcases
+  css-props-prefix="--color"
+  component-class="box"
+  style-key="background-color"
+></dockit-css-showcases>
+
+<h2>Text Colors</h2>
+
+<dockit-css-showcases
+  css-props-prefix="--color"
+  component-type="text"
+  style-key="color"
+></dockit-css-showcases>
+
+{% endblock %}

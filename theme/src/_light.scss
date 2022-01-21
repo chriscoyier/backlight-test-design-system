@@ -1,0 +1,16 @@
+@mixin light {
+  color-scheme: light;
+
+  --nj-color-primary: var(--nj-color-primary-light);
+  --nj-color-primary-100: var(--nj-color-primary-100-light);
+  --nj-color-surface: var(--nj-color-base-light);
+  --nj-color-text: var(--nj-color-base-dark);
+}
+
+:root {
+  @include light;
+}
+
+[color-scheme='light'] {
+  @include light;
+}

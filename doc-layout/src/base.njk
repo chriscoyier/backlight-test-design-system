@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <link rel="stylesheet" href="/doc-layout/src/doc-layout.css">
+  <script src="/doc-layout/src/index.js" type="module"></script>
+</head>
+<body class="doc">
+  <header>
+  {% block header %}
+    {% block logo %}
+      <div class="logo">{% include "./nunjucks.svg" %}</div>
+    {% endblock %}
+  {% endblock %}
+  </header>
+  <main>
+  {% block default %}{% endblock %}
+  </main>
+</body>
+</html>

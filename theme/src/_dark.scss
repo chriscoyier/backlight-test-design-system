@@ -1,0 +1,19 @@
+// WIP: Define dark theme variant
+@mixin dark {
+  color-scheme: dark;
+
+  --nj-color-primary: var(--nj-color-primary-light);
+  --nj-color-primary-100: var(--nj-color-primary-100-light);
+  --nj-color-surface: var(--nj-color-base-dark);
+  --nj-color-text: var(--nj-color-base-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark;
+  }
+}
+
+[color-scheme='dark'] {
+  @include dark;
+}

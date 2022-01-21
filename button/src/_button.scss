@@ -1,0 +1,40 @@
+.btn {
+  background-color: var(--nj-color-primary);
+  color: var(--nj-color-base-light);
+
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+
+  border-radius: var(--radius-round);
+  border: 2px solid var(--nj-color-primary);
+
+  font-size: 1rem;
+  letter-spacing: 0.13rem;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  &.outlined {
+    background-color: var(--nj-color-base-light);
+    color: var(--nj-color-primary);
+  }
+
+  &[disabled] {
+    background-color: var(--nj-color-primary-100);
+    cursor: not-allowed;
+  }
+}
+
+.btn i {
+  width: 1rem;
+  margin-right: 0.55rem;
+
+  svg {
+    width: 100%;
+  }
+
+  &:empty {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+{% macro btn(label, icon = '', classes = '', attrs = '') %}
+  <button
+    class="btn {{ classes }}"
+    {{ attrs }}
+  >
+    <i class="icon">{{ icon | safe }}</i>
+    {{ label }}
+  </button>
+{% endmacro %}
+

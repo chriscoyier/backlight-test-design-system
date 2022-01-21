@@ -1,0 +1,16 @@
+{
+  "name": "@backlight-dev/css-tricks-test.nunjucks-kyoy8ngb",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "{{ homepage }}",
+  "scripts": {
+    "serve": "npx backlight@latest serve om413oGKsvG5CKN3sHVC --open"
+  },
+  "devDependencies": {
+    "@divriots/dockit-core": "*",
+    "nunjucks": "*"
+  },
+  "dependencies": {}
+}

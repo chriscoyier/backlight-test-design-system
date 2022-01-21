@@ -1,0 +1,10 @@
+$base-green: #3d8137;
+
+%colors {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-green: #{$base-green};
+  --color-green-100: #{lighten($base-green, 10%)};
+  --color-slate: #f8f9fa;
+  --color-grey: #212529;
+}

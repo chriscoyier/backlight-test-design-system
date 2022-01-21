@@ -1,0 +1,28 @@
+{
+  "packages": {
+    "dir": "",
+    "menu": [
+      [
+        "TOKENS",
+        [
+          "colors",
+          "elevation",
+          "radius",
+          "theme"
+        ]
+      ],
+      [
+        "COMPONENTS",
+        [
+          "button"
+        ]
+      ],
+      [
+        "INFRASTRUCTURE",
+        [
+          "doc-layout"
+        ]
+      ]
+    ]
+  }
+}
